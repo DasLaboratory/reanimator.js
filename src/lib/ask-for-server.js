@@ -1,4 +1,4 @@
-const { Select } = require('enquirer');
+import { Select } from 'enquirer';
 
 async function askForServer(servers) {
 	const domains = Object.keys(servers).map(server => {
@@ -19,4 +19,4 @@ async function askForServer(servers) {
 		.catch(console.error);
 }
 
-module.exports = askForServer;
+export default askForServer;

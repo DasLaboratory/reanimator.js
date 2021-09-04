@@ -1,0 +1,27 @@
+diff --git a/node_modules/single-line-log/index.js b/node_modules/single-line-log/index.js
+index c1201be..78b6a02 100644
+--- a/node_modules/single-line-log/index.js
++++ b/node_modules/single-line-log/index.js
+@@ -1,6 +1,7 @@
+-var MOVE_LEFT = new Buffer('1b5b3130303044', 'hex').toString();
+-var MOVE_UP = new Buffer('1b5b3141', 'hex').toString();
+-var CLEAR_LINE = new Buffer('1b5b304b', 'hex').toString();
++var bufferFrom = require('buffer-from')
++var MOVE_LEFT = bufferFrom('1b5b3130303044', 'hex').toString();
++var MOVE_UP = bufferFrom('1b5b3141', 'hex').toString();
++var CLEAR_LINE = bufferFrom('1b5b304b', 'hex').toString();
+ var stringWidth = require('string-width');
+ 
+ module.exports = function(stream) {
+diff --git a/node_modules/single-line-log/package.json b/node_modules/single-line-log/package.json
+index 077faab..bd486a4 100644
+--- a/node_modules/single-line-log/package.json
++++ b/node_modules/single-line-log/package.json
+@@ -19,6 +19,7 @@
+   "license": "MIT",
+   "author": "Tobias Baunbæk <freeall@gmail.com>",
+   "dependencies": {
++    "buffer-from": "^1",
+     "string-width": "^1.0.1"
+   },
+   "scripts": {

@@ -13,4 +13,4 @@ function showHeader() {
                                                                                       `);
 }
 
-module.exports = showHeader;
+export default showHeader;

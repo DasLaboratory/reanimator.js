@@ -1,21 +1,33 @@
-# 📦 reanimator.js
+# reanimator.js
 
 Reanimate dead projects faster than you can say Lazarus of Bethany!
 
 ## Usage
 
-###### Development
+###### Run reanimator.js
 
 ```bash
-npm start			# or
-npm run watch		# or
-npm run dev			# or
-npx parcel watch
+npx reanimator
+# or
+npm run reanimator
+```
+
+###### Development (watch)
+
+Using [esbuild](https://esbuild.github.io/):
+
+```bash
+npm start
+# or
+npm run watch
+# or
+npm run dev
 ```
 
 ###### Build
 
+Using [esbuild](https://esbuild.github.io/):
+
 ```bash
-npm run build		# or
-npx parcel build
+npm run build
 ```

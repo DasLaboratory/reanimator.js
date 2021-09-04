@@ -12,4 +12,4 @@ function showFooter() {
                                                         ░                     `);
 }
 
-module.exports = showFooter;
+export default showFooter;

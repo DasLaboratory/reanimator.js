@@ -7,6 +7,7 @@
 	"exclude": ["dist", "build", "playground"],
 	"include": ["src/**/*"],
 	"typeAcquisition": {
-		"include": []
+		"include": [],
+		"exclude": ["posthtml-render", "defer-to-connect", "source-map-js", "source-map", "weak-lru-cache"]
 	}
 }

@@ -12,13 +12,18 @@
 	"bugs": {
 		"url": "https://github.com/DasLaboratory/reanimator.js/issues"
 	},
-	"main": "dist/main.js",
+	"main": "dist/out.js",
+	"bin": {
+		"reanimator": "./bin/run.mjs"
+	},
+	"module": "src/index.js",
 	"scripts": {
-		"build": "parcel build",
-		"dev": "parcel watch",
+		"build": "node ./build/build.js",
+		"dev": "node ./build/watch.js",
 		"postinstall": "patch-package",
-		"start": "parcel watch",
-		"watch": "parcel watch"
+		"reanimator": "node ./bin/run.mjs",
+		"start": "node ./build/watch.js",
+		"watch": "node ./build/watch.js"
 	},
 	"keywords": [
 		"resurrection",
@@ -31,11 +36,13 @@
 		"daslaboratory"
 	],
 	"dependencies": {
-		"@das.laboratory/cli-helpers": "^1.0.1",
+		"@das.laboratory/cli-helpers": "^1.1.1",
 		"enquirer": "^2.3.6",
+		"esbuild": "^0.12.25",
 		"os-browserify": "^0.3.0",
 		"patch-package": "^6.4.7",
-		"ssh2-sftp-client": "^7.0.3"
+		"ssh2-sftp-client": "^7.0.3",
+		"update-notifier": "^5.1.0"
 	},
 	"devDependencies": {
 		"parcel": "^2.0.0-rc.0"
