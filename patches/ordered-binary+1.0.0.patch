@@ -1,0 +1,12 @@
+diff --git a/node_modules/ordered-binary/package.json b/node_modules/ordered-binary/package.json
+index 48ca65d..0255a41 100644
+--- a/node_modules/ordered-binary/package.json
++++ b/node_modules/ordered-binary/package.json
+@@ -12,7 +12,6 @@
+     "test": "mocha tests -u tdd"
+   },
+   "main": "./index.js",
+-  "typings": "./index.d.ts",
+   "dependencies": {},
+   "optionalDependencies": {},
+   "devDependencies": {

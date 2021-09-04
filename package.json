@@ -1,0 +1,58 @@
+{
+	"name": "reanimator",
+	"version": "1.0.0",
+	"description": "Reanimate dead projects faster than you can say Lazarus of Bethany!",
+	"license": "UNLICENSED",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DasLaboratory/reanimator.js.git"
+	},
+	"author": "Nicolas Reibnitz <n.reibnitz@gmail.com> (http://daslaboritory.com/)",
+	"homepage": "https://github.com/DasLaboratory/reanimator.js#readme",
+	"bugs": {
+		"url": "https://github.com/DasLaboratory/reanimator.js/issues"
+	},
+	"main": "dist/main.js",
+	"scripts": {
+		"build": "parcel build",
+		"dev": "parcel watch",
+		"postinstall": "patch-package",
+		"start": "parcel watch",
+		"watch": "parcel watch"
+	},
+	"keywords": [
+		"resurrection",
+		"galvanism",
+		"miracle",
+		"science",
+		"mental-health",
+		"nodejs",
+		"interactive",
+		"daslaboratory"
+	],
+	"dependencies": {
+		"@das.laboratory/cli-helpers": "^1.0.1",
+		"enquirer": "^2.3.6",
+		"os-browserify": "^0.3.0",
+		"patch-package": "^6.4.7",
+		"ssh2-sftp-client": "^7.0.3"
+	},
+	"devDependencies": {
+		"parcel": "^2.0.0-rc.0"
+	},
+	"@parcel/transformer-js": {
+		"inlineFS": false,
+		"inlineEnvironment": false
+	},
+	"source": "src/index.js",
+	"targets": {
+		"main": {
+			"context": "node",
+			"engines": {
+				"node": ">= 12"
+			},
+			"outputFormat": "commonjs",
+			"isLibrary": true
+		}
+	}
+}
