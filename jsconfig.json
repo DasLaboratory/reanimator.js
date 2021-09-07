@@ -8,6 +8,15 @@
 	"include": ["src/**/*"],
 	"typeAcquisition": {
 		"include": [],
-		"exclude": ["posthtml-render", "defer-to-connect", "source-map-js", "source-map", "weak-lru-cache"]
+		"exclude": [
+			"posthtml-render",
+			"defer-to-connect",
+			"source-map-js",
+			"source-map",
+			"weak-lru-cache",
+			"fuzzy",
+			"rxjs",
+			"ordered-binary"
+		]
 	}
 }

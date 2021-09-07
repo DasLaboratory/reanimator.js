@@ -2,7 +2,6 @@
 
 import main from '../dist/out.js';
 
-console.log(main.default);
 main.default();
 /**
  * Make sure that the Bitbucket account is set up correctly.

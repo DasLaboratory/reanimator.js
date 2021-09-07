@@ -1,5 +1,5 @@
 {
-	"name": "reanimator",
+	"name": "@das.laboratory/reanimator",
 	"version": "1.0.0",
 	"description": "Reanimate dead projects faster than you can say Lazarus of Bethany!",
 	"license": "UNLICENSED",
@@ -19,12 +19,26 @@
 	"module": "src/index.js",
 	"scripts": {
 		"build": "node ./build/build.js",
+		"bump:major": "npm version major -f -m \"[v%s] $npm_config_message\"",
+		"bump:minor": "npm version minor -f -m \"[v%s] $npm_config_message\"",
+		"bump:patch": "npm version patch -f -m \"[v%s] $npm_config_message\"",
 		"dev": "node ./build/watch.js",
 		"postinstall": "patch-package",
+		"postversion": "git push && git push --tags && npm publish",
+		"preversion": "git add .",
 		"reanimator": "node ./bin/run.mjs",
 		"start": "node ./build/watch.js",
+		"version": "git add .",
 		"watch": "node ./build/watch.js"
 	},
+	"files": [
+		"_assets",
+		"!_assets/*.psd",
+		"bin",
+		"dist",
+		"patches",
+		"src"
+	],
 	"keywords": [
 		"resurrection",
 		"galvanism",
@@ -37,15 +51,20 @@
 	],
 	"dependencies": {
 		"@das.laboratory/cli-helpers": "^1.1.1",
+		"dotenv": "^10.0.0",
 		"enquirer": "^2.3.6",
 		"esbuild": "^0.12.25",
+		"fuzzy": "^0.1.3",
+		"inquirer": "^8.1.2",
+		"inquirer-autocomplete-prompt": "^1.4.0",
+		"lodash": "^4.17.21",
+		"node-ssh": "^12.0.0",
 		"os-browserify": "^0.3.0",
 		"patch-package": "^6.4.7",
 		"ssh2-sftp-client": "^7.0.3",
-		"update-notifier": "^5.1.0"
-	},
-	"devDependencies": {
-		"parcel": "^2.0.0-rc.0"
+		"string.prototype.replaceall": "^1.0.5",
+		"update-notifier": "^5.1.0",
+		"wrap-ansi": "^8.0.0"
 	},
 	"@parcel/transformer-js": {
 		"inlineFS": false,
