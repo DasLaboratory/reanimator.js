@@ -1,8 +1,9 @@
 import stringWidth from 'string-width';
 import { clearScreen } from '@das.laboratory/cli-helpers';
 import chalk from 'chalk';
-import '../data/env.js';
-const cliWidth = parseInt(process.env.CLI_WIDTH);
+// import '../data/env.js';
+// const cliWidth = parseInt(process.env.CLI_WIDTH);
+const cliWidth = 88;
 import asciiArt from '../data/ascii-art.js';
 import replaceAll from 'string.prototype.replaceall';
 

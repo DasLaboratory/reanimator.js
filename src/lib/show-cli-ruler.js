@@ -1,5 +1,6 @@
-import '../data/env.js';
-const cliWidth = parseInt(process.env.CLI_WIDTH);
+// import '../data/env.js';
+// const cliWidth = parseInt(process.env.CLI_WIDTH);
+const cliWidth = 88;
 
 function showCLIRuler(lineLength = cliWidth) {
 	let rulerString1 = '';

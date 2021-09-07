@@ -8,7 +8,7 @@ import servers from './data/servers.json';
 import showAsciiArt from './lib/show-ascii-art.js';
 import getTargetPath from './lib/get-target-path.js';
 // import showCLIRuler from './lib/show-cli-ruler.js';
-import './data/env.js';
+// import './data/env.js';
 import getPathType from './lib/get-path-type.js';
 import makelive from './lib/makelive.js';
 

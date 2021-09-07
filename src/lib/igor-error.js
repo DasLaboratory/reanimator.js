@@ -5,8 +5,9 @@ const error = bold.red;
 import { centerText } from '@das.laboratory/cli-helpers';
 import wrapAnsi from 'wrap-ansi';
 import replaceAll from 'string.prototype.replaceall';
-import '../data/env.js';
-const cliWidth = parseInt(process.env.CLI_WIDTH);
+// import '../data/env.js';
+// const cliWidth = parseInt(process.env.CLI_WIDTH);
+const cliWidth = 88;
 
 /**
  * @param {*} realErrorCode err.code

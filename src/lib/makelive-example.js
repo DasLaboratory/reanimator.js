@@ -10,8 +10,9 @@ import chalk from 'chalk';
 import getPathType from './get-path-type.js';
 import igorError from './igor-error.js';
 
-import '../data/env.js';
-const cliWidth = parseInt(process.env.CLI_WIDTH);
+// import '../data/env.js';
+// const cliWidth = parseInt(process.env.CLI_WIDTH);
+const cliWidth = 88;
 
 function pbcopy(data) {
 	var proc = require('child_process').spawn('pbcopy');

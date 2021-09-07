@@ -4595,82 +4595,6 @@ var require_string_prototype = __commonJS({
   }
 });
 
-// node_modules/dotenv/lib/main.js
-var require_main = __commonJS({
-  "node_modules/dotenv/lib/main.js"(exports, module2) {
-    var fs3 = require("fs");
-    var path = require("path");
-    var os = require("os");
-    function log(message) {
-      console.log(`[dotenv][DEBUG] ${message}`);
-    }
-    var NEWLINE = "\n";
-    var RE_INI_KEY_VAL = /^\s*([\w.-]+)\s*=\s*(.*)?\s*$/;
-    var RE_NEWLINES = /\\n/g;
-    var NEWLINES_MATCH = /\r\n|\n|\r/;
-    function parse(src, options) {
-      const debug = Boolean(options && options.debug);
-      const obj = {};
-      src.toString().split(NEWLINES_MATCH).forEach(function(line, idx) {
-        const keyValueArr = line.match(RE_INI_KEY_VAL);
-        if (keyValueArr != null) {
-          const key = keyValueArr[1];
-          let val = keyValueArr[2] || "";
-          const end = val.length - 1;
-          const isDoubleQuoted = val[0] === '"' && val[end] === '"';
-          const isSingleQuoted = val[0] === "'" && val[end] === "'";
-          if (isSingleQuoted || isDoubleQuoted) {
-            val = val.substring(1, end);
-            if (isDoubleQuoted) {
-              val = val.replace(RE_NEWLINES, NEWLINE);
-            }
-          } else {
-            val = val.trim();
-          }
-          obj[key] = val;
-        } else if (debug) {
-          log(`did not match key and value when parsing line ${idx + 1}: ${line}`);
-        }
-      });
-      return obj;
-    }
-    function resolveHome(envPath) {
-      return envPath[0] === "~" ? path.join(os.homedir(), envPath.slice(1)) : envPath;
-    }
-    function config2(options) {
-      let dotenvPath = path.resolve(process.cwd(), ".env");
-      let encoding = "utf8";
-      let debug = false;
-      if (options) {
-        if (options.path != null) {
-          dotenvPath = resolveHome(options.path);
-        }
-        if (options.encoding != null) {
-          encoding = options.encoding;
-        }
-        if (options.debug != null) {
-          debug = true;
-        }
-      }
-      try {
-        const parsed = parse(fs3.readFileSync(dotenvPath, { encoding }), { debug });
-        Object.keys(parsed).forEach(function(key) {
-          if (!Object.prototype.hasOwnProperty.call(process.env, key)) {
-            process.env[key] = parsed[key];
-          } else if (debug) {
-            log(`"${key}" is already defined in \`process.env\` and will not be overwritten`);
-          }
-        });
-        return { parsed };
-      } catch (e) {
-        return { error: e };
-      }
-    }
-    module2.exports.config = config2;
-    module2.exports.parse = parse;
-  }
-});
-
 // node_modules/ansi-colors/symbols.js
 var require_symbols = __commonJS({
   "node_modules/ansi-colors/symbols.js"(exports, module2) {
@@ -61979,7 +61903,7 @@ var require_RemoveFileError = __commonJS({
 });
 
 // node_modules/external-editor/main/index.js
-var require_main2 = __commonJS({
+var require_main = __commonJS({
   "node_modules/external-editor/main/index.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
@@ -62169,7 +62093,7 @@ var require_editor = __commonJS({
   "node_modules/inquirer/lib/prompts/editor.js"(exports, module2) {
     "use strict";
     var chalk3 = require_source();
-    var { editAsync } = require_main2();
+    var { editAsync } = require_main();
     var Base = require_base();
     var observe = require_events();
     var { Subject: Subject2 } = require_cjs();
@@ -78718,14 +78642,8 @@ var $bd4c7c7dfd6721b6$export$40256ab660326f2f = $0b0d61593f257180$export$9099ad9
 
 // src/lib/igor-error.js
 var import_string_prototype = __toModule(require_string_prototype());
-
-// src/data/env.js
-var import_dotenv = __toModule(require_main());
-import_dotenv.default.config({ silent: true });
-
-// src/lib/igor-error.js
 var error = import_chalk2.bold.red;
-var cliWidth = parseInt(process.env.CLI_WIDTH);
+var cliWidth = 88;
 function igorError(realErrorCode = null, realErrorMessage = null, throwError2 = false, exitCode = null, igorErrorCode = "SOMETHING_WENT_TOTALLY_WRONG_ERROR", igorErrorMessage = 'An inexplicit "something went wrong" or "something went\ntotally wrong" error occurred:') {
   process.exitCode = 1;
   const igorError2 = new Error(igorErrorCode);
@@ -78937,7 +78855,7 @@ var ascii_art_default = {
 
 // src/lib/show-ascii-art.js
 var import_string_prototype2 = __toModule(require_string_prototype());
-var cliWidth2 = parseInt(process.env.CLI_WIDTH);
+var cliWidth2 = 88;
 var successStyle = import_chalk3.default.green;
 var errorStyle = import_chalk3.default.red;
 var boldStyle = import_chalk3.default.white;
@@ -79889,7 +79807,7 @@ var import_path6 = __toModule(require("path"));
 var import_wide_align2 = __toModule(require_align());
 var import_boxen3 = __toModule(require_boxen());
 var import_chalk4 = __toModule(require_source());
-var cliWidth3 = parseInt(process.env.CLI_WIDTH);
+var cliWidth3 = 88;
 function pbcopy(data) {
   var proc = require("child_process").spawn("pbcopy");
   proc.stdin.write(data);
