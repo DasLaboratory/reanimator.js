@@ -8,7 +8,7 @@ So you spent your precious time away from the operating table on archiving older
 
 But fret not! Because reanimating old links is now easier than ever!
 
-###### Here is how it works:
+#### Here is how it works:
 
 You'll only have to tell `reanimator.js` what project you want roaming the earth again, and it does everything else for you!
 
@@ -42,7 +42,7 @@ npm install -g @das.laboratory/reanimator
 
 ## Usage
 
-###### Running reanimator.js
+#### Running reanimator.js
 
 You can use the built-in navigator to select the server and the folder or file:
 
@@ -74,7 +74,7 @@ reanimator https://daslaboratory.com/galvanism-for-noobs/en/das.laboratory-galva
 
 **Note:** If you provide a URL to a folder, its parent folder will be used instead. Because when you use the old live link, the folder will obviously not be available anymore. Otherwise, there would be little reason to use `reanimator.js` at all.
 
-###### Finishing up
+#### Finishing up
 
 In any case, you will end up with a summary, and the reanimated live link will also be copied to your clipboard!
 
