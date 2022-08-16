@@ -1,11 +1,12 @@
-import stringWidth from 'string-width';
 import { clearScreen } from '@das.laboratory/cli-helpers';
 import chalk from 'chalk';
+import replaceAll from 'string.prototype.replaceall';
+import stringWidth from 'string-width';
+
+import asciiArt from '../data/ascii-art.js';
 // import '../data/env.js';
 // const cliWidth = parseInt(process.env.CLI_WIDTH);
 const cliWidth = 88;
-import asciiArt from '../data/ascii-art.js';
-import replaceAll from 'string.prototype.replaceall';
 
 const successStyle = chalk.green;
 const errorStyle = chalk.red;
@@ -32,7 +33,7 @@ function showAsciiArt(art, doClearScreen = false, lineLength = cliWidth) {
 	}
 
 	if (Array.isArray(asciiArt[art])) {
-		const rndInt = Math.floor(Math.random() * asciiArt[art].length) + 1;
+		// const rndInt = Math.floor(Math.random() * asciiArt[art].length) + 1;
 		// asciiArtString = asciiArt[art][rndInt - 1];
 		asciiArtString = asciiArt[art][5];
 	} else {

@@ -1,10 +1,12 @@
-import { extname, normalize } from 'path';
-import getRemoteFolderContent from './get-remote-folder-content.js';
-import parseRemoteFolderContent from './parse-remote-folder-content.js';
+import { normalize } from 'path';
+
 import chooseProject from '../inquiries/choose-project.js';
-import showAsciiArt from './show-ascii-art.js';
+
 import getPathType from './get-path-type.js';
+import getRemoteFolderContent from './get-remote-folder-content.js';
 import getRemotePathInfo from './get-remote-path-info.js';
+import parseRemoteFolderContent from './parse-remote-folder-content.js';
+import showAsciiArt from './show-ascii-art.js';
 
 async function getTargetPath(serverConfig, entryPath, selected = false) {
 	showAsciiArt('header', true);

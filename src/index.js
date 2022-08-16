@@ -1,16 +1,17 @@
-import igorError from './lib/igor-error.js';
 // import stringWidth from 'string-width';
 import { dirname } from 'path';
-// import { clearScreen } from '@das.laboratory/cli-helpers';
-import getSSHKey from './lib/get-ssh-key.js';
-import askForServer from './inquiries/ask-for-server.js';
+
 import servers from './data/servers.json';
-import showAsciiArt from './lib/show-ascii-art.js';
-import getTargetPath from './lib/get-target-path.js';
+import askForServer from './inquiries/ask-for-server.js';
 // import showCLIRuler from './lib/show-cli-ruler.js';
 // import './data/env.js';
 import getPathType from './lib/get-path-type.js';
+// import { clearScreen } from '@das.laboratory/cli-helpers';
+import getSSHKey from './lib/get-ssh-key.js';
+import getTargetPath from './lib/get-target-path.js';
+import igorError from './lib/igor-error.js';
 import makelive from './lib/makelive.js';
+import showAsciiArt from './lib/show-ascii-art.js';
 
 async function main() {
 	showAsciiArt('header', true);

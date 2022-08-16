@@ -1,6 +1,7 @@
-import { registerPrompt, prompt } from 'inquirer';
 import { filter } from 'fuzzy';
+import { prompt, registerPrompt } from 'inquirer';
 import { sortBy } from 'lodash';
+
 registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'));
 
 export default async function (projects) {

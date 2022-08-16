@@ -1,7 +1,7 @@
 {
 	"name": "@das.laboratory/reanimator",
-	"version": "1.0.2",
-	"description": "Reanimate dead projects faster than you can say Lazarus of Bethany!",
+	"version": "1.1.0",
+	"description": "Reanimate dead projects faster than you can say 'Lazarus of Bethany!'",
 	"license": "UNLICENSED",
 	"repository": {
 		"type": "git",
@@ -23,6 +23,8 @@
 		"bump:minor": "npm version minor -f -m \"[v%s] $npm_config_message\"",
 		"bump:patch": "npm version patch -f -m \"[v%s] $npm_config_message\"",
 		"dev": "node ./build/watch.js",
+		"format": "prettier --write \"./src/**/*.{js,vue,scss,html,md,json}\" --ignore-path .eslintignore",
+		"lint": "eslint --fix --ext .js,.vue ./src",
 		"postinstall": "patch-package",
 		"postversion": "git push && git push --tags && npm publish",
 		"preversion": "git add .",

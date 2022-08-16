@@ -1,10 +1,11 @@
 /* eslint max-params: ["error", 5] */
-import { dim, bold } from 'chalk';
-import boxen from 'boxen';
-const error = bold.red;
 import { centerText } from '@das.laboratory/cli-helpers';
-import wrapAnsi from 'wrap-ansi';
+import boxen from 'boxen';
+import { bold, dim } from 'chalk';
 import replaceAll from 'string.prototype.replaceall';
+// import wrapAnsi from 'wrap-ansi';
+
+const error = bold.red;
 // import '../data/env.js';
 // const cliWidth = parseInt(process.env.CLI_WIDTH);
 const cliWidth = 88;

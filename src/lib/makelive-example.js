@@ -1,12 +1,14 @@
 /* eslint-disable no-caller */
+import { basename, dirname } from 'path';
+
+import boxen from 'boxen';
+import chalk from 'chalk';
 import { NodeSSH } from 'node-ssh';
-import { dirname, basename } from 'path';
 // import terminalLink from 'terminal-link';
 // import { box, log } from './cli-style';
 // import { header } from '@das.laboratory/cli-helpers';
 import align from 'wide-align';
-import boxen from 'boxen';
-import chalk from 'chalk';
+
 import getPathType from './get-path-type.js';
 import igorError from './igor-error.js';
 

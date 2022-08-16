@@ -1,4 +1,5 @@
 import Client from 'ssh2-sftp-client';
+
 import igorError from './igor-error.js';
 
 async function getRemoteFileInfo(serverData, path) {
